@@ -11,6 +11,8 @@ require('packer').startup(function(use)
   -- Package manager
   use 'wbthomason/packer.nvim'
   use 'folke/tokyonight.nvim'
+  use 'RishabhRD/popfix'
+  use 'RishabhRD/nvim-cheat.sh'
   use { "catppuccin/nvim", as = "catppuccin" }
 
   use { -- LSP Configuration & Plugins
@@ -104,6 +106,9 @@ vim.o.rnu = true
 -- Enable mouse mode
 vim.o.mouse = 'a'
 
+-- Wrap
+vim.o.wrap = false
+
 -- Indent stuff
 vim.o.breakindent = true
 vim.opt.tabstop = 2
@@ -153,6 +158,9 @@ vim.keymap.set("n", "<leader>E", "<cmd>Lex<CR>")
 -- Remap for dealing with word wrap
 vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
 vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
+
+-- cht.sh integration
+vim.keymap.set('n', '<leader>?', '<cmd>Cheat<CR>')
 
 -- [[ Highlight on yank ]]
 -- See `:help vim.highlight.on_yank()`
@@ -215,7 +223,6 @@ require('telescope').setup {
 pcall(require('telescope').load_extension, 'fzf')
 
 -- See `:help telescope.builtin`
-vim.keymap.set('n', '<leader>?', require('telescope.builtin').oldfiles, { desc = '[?] Find recently opened files' })
 vim.keymap.set('n', '<leader><space>', require('telescope.builtin').buffers, { desc = '[ ] Find existing buffers' })
 vim.keymap.set('n', '<leader>/', function()
   -- You can pass additional configuration to telescope to change theme, layout, etc.
