@@ -14,6 +14,7 @@ require('packer').startup(function(use)
   use 'RishabhRD/popfix'
   use 'RishabhRD/nvim-cheat.sh'
   use { "catppuccin/nvim", as = "catppuccin" }
+  use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install", setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, })
 
   use { -- LSP Configuration & Plugins
     'neovim/nvim-lspconfig',
@@ -136,7 +137,7 @@ vim.wo.signcolumn = 'yes'
 
 -- Set colorscheme
 vim.o.termguicolors = true
-vim.cmd [[colorscheme catppuccin-mocha]]
+vim.cmd [[colorscheme tokyonight-night]]
 
 -- Set completeopt to have a better completion experience
 vim.o.completeopt = 'menuone,noselect'
@@ -178,7 +179,7 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 require('lualine').setup {
   options = {
     icons_enabled = false,
-    theme = 'catppuccin',
+    theme = 'tokyonight',
     component_separators = '|',
     section_separators = '',
   },
@@ -237,6 +238,7 @@ vim.keymap.set('n', '<leader>sh', require('telescope.builtin').help_tags, { desc
 vim.keymap.set('n', '<leader>sw', require('telescope.builtin').grep_string, { desc = '[S]earch current [W]ord' })
 vim.keymap.set('n', '<leader>sg', require('telescope.builtin').live_grep, { desc = '[S]earch by [G]rep' })
 vim.keymap.set('n', '<leader>sd', require('telescope.builtin').diagnostics, { desc = '[S]earch [D]iagnostics' })
+vim.keymap.set('n', '<leader>sF', require('telescope.builtin').oldfiles, { desc = '[s] [F]ind recently opened files' })
 
 -- [[ Configure Treesitter ]]
 -- See `:help nvim-treesitter`
@@ -361,7 +363,7 @@ require('mason').setup()
 
 -- Enable the following language servers
 -- Feel free to add/remove any LSPs that you want here. They will automatically be installed
-local servers = { 'clangd', 'rust_analyzer', 'pyright', 'tsserver', 'sumneko_lua', 'gopls', 'html', 'cssls', 'emmet_ls' }
+local servers = { 'clangd', 'rust_analyzer', 'pyright', 'tsserver', 'sumneko_lua', 'gopls', 'html', 'cssls', 'emmet_ls', 'marksman', 'grammarly' }
 
 -- Ensure the servers above are installed
 require('mason-lspconfig').setup {
