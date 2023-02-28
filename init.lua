@@ -98,7 +98,7 @@ vim.api.nvim_create_autocmd('BufWritePost', {
 -- See `:help vim.o`
 
 -- Scrolloff
-vim.o.scrolloff = 17
+vim.o.scrolloff = 5
 
 -- Set highlight on search
 vim.o.hlsearch = false
@@ -140,7 +140,7 @@ vim.wo.signcolumn = 'yes'
 
 -- Set colorscheme
 vim.o.termguicolors = true
-vim.cmd [[colorscheme catppuccin]]
+vim.cmd [[colorscheme tokyonight-night]]
 
 -- Set completeopt to have a better completion experience
 vim.o.completeopt = 'menuone,noselect'
@@ -182,7 +182,7 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 require('lualine').setup {
   options = {
     icons_enabled = false,
-    theme = 'catppuccin',
+    theme = 'tokyonight',
     component_separators = '|',
     section_separators = '',
   },
