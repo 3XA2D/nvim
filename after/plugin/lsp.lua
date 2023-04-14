@@ -16,6 +16,7 @@ lsp.ensure_installed({
   'html',
   'cssls',
   'pyright',
+  'bashls',
 })
 
 lsp.setup()
