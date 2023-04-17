@@ -2,10 +2,11 @@ local function map(mode, lhs, rhs, opts)
   vim.keymap.set(mode, lhs, rhs, opts)
 end
 
--- recommended mappings
--- resizing splits
--- these keymaps will also accept a range,
--- for example `10<A-h>` will `resize_left` by `(10 * config.default_amount)`
+
+-----------------
+-- Smart split --
+-----------------
+
 map('n', '<A-h>', require('smart-splits').resize_left)
 map('n', '<A-j>', require('smart-splits').resize_down)
 map('n', '<A-k>', require('smart-splits').resize_up)
@@ -20,3 +21,20 @@ map('n', '<leader><leader>h', require('smart-splits').swap_buf_left)
 map('n', '<leader><leader>j', require('smart-splits').swap_buf_down)
 map('n', '<leader><leader>k', require('smart-splits').swap_buf_up)
 map('n', '<leader><leader>l', require('smart-splits').swap_buf_right)
+
+-----------------
+-- Color stuff --
+-----------------
+
+map("n", "<C-c>", "<cmd>PickColor<cr>", { noremap = true, silent = true })
+map("i", "<C-c>", "<cmd>PickColorInsert<cr>", { noremap = true, silent = true })
+
+---------------
+-- Telescope --
+---------------
+
+local tele_builtin = require('telescope.builtin')
+map('n', '<leader>ff', tele_builtin.find_files, {})
+map('n', '<leader>fg', tele_builtin.live_grep, {})
+map('n', '<leader>fb', tele_builtin.buffers, {})
+map('n', '<leader>fh', tele_builtin.help_tags, {})

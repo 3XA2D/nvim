@@ -77,4 +77,5 @@ return {
   { "ziontee113/color-picker.nvim" },
   { "norcalli/nvim-colorizer.lua" },
   { "onsails/lspkind.nvim" },
+  { "turbio/bracey.vim" },
 }

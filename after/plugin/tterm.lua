@@ -31,6 +31,6 @@ end
 
 map('n', '<leader>tt', '<cmd>ToggleTerm<CR>')
 map("n", "<leader>tg", "<cmd>lua _lazygit_toggle()<CR>", { noremap = true, silent = true })
-map("n", "<leader>tc", "<cmd>lua _chtsh_toggle()<CR>", { noremap = true, silent = true })
+map("n", "<leader>t?", "<cmd>lua _chtsh_toggle()<CR>", { noremap = true, silent = true })
 
 require("toggleterm").setup()
