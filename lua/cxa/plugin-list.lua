@@ -71,11 +71,26 @@ return {
       },
     },
   },
-  { 'akinsho/toggleterm.nvim',     version = "*", config = true },
+  {
+    "roobert/tailwindcss-colorizer-cmp.nvim",
+    lazy = false,
+    -- optionally, override the default options:
+    config = function()
+      require("tailwindcss-colorizer-cmp").setup({
+        color_square_width = 2,
+      })
+    end,
+  },
+  {
+    "NvChad/nvim-colorizer.lua",
+    opts = {
+      user_default_options = {
+        tailwind = true,
+      },
+    },
+  },
+  { 'akinsho/toggleterm.nvim', version = "*", config = true },
   { "tpope/vim-fugitive" },
   { "tpope/vim-rhubarb" },
-  { "ziontee113/color-picker.nvim" },
-  { "norcalli/nvim-colorizer.lua" },
-  { "onsails/lspkind.nvim" },
   { "turbio/bracey.vim" },
 }

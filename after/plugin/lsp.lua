@@ -19,11 +19,15 @@ lsp.ensure_installed({
   'bashls',
 })
 
+lsp.setup_nvim_cmp({
+  formatting = {
+    format = require("tailwindcss-colorizer-cmp").formatter
+  }
+})
+
 lsp.setup()
 
 local cmp = require('cmp')
-local lspkind = require('lspkind')
-
 cmp.setup({
   mapping = {
     ['<CR>'] = cmp.mapping.confirm({ select = false }),
@@ -35,15 +39,8 @@ cmp.setup({
     { name = 'luasnip', keyword_length = 2 },
   },
   formatting = {
-    format = lspkind.cmp_format({
-      mode = "symbol_text",
-      menu = ({
-        buffer = "[Buffer]",
-        nvim_lsp = "[LSP]",
-        luasnip = "[LuaSnip]",
-        nvim_lua = "[Lua]",
-        latex_symbols = "[Latex]",
-      })
-    }),
+    format = function(entry, vim_item)
+      return require("tailwindcss-colorizer-cmp").formatter(entry, vim_item)
+    end
   },
 })
