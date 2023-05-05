@@ -13,15 +13,6 @@ wk.register({
   ["<leader>tt"] = { "open terminal" },
   ["<leader>tg"] = { "open lazygit" },
   ["<leader>t?"] = { "open cht.sh" },
-  -- Noteflow
-  ["<leader>n"] = { name = "+Noteflow" },
-  ["<leader>nd"] = { "Noteflow daily" },
-  ["<leader>nf"] = { "Noteflow find" },
-  ["<leader>ne"] = { "Noteflow edit tags" },
-  ["<leader>nt"] = { "Noteflow tags" },
-  ["<leader>ng"] = { "Noteflow grep" },
-  ["<leader>ns"] = { "Noteflow staged grep" },
-  ["<leader>nl"] = { "Noteflow insert link" },
   -- Buffer
   ["<leader>b"] = { "+Buffer" },
   ["<leader>bn"] = { "Next buffer" },

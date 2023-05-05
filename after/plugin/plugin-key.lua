@@ -22,13 +22,6 @@ map('n', '<leader><leader>j', require('smart-splits').swap_buf_down)
 map('n', '<leader><leader>k', require('smart-splits').swap_buf_up)
 map('n', '<leader><leader>l', require('smart-splits').swap_buf_right)
 
------------------
--- Color stuff --
------------------
-
-map("n", "<C-c>", "<cmd>PickColor<cr>", { noremap = true, silent = true })
-map("i", "<C-c>", "<cmd>PickColorInsert<cr>", { noremap = true, silent = true })
-
 ---------------
 -- Telescope --
 ---------------

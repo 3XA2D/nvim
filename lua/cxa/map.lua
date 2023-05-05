@@ -3,7 +3,7 @@ local function map(mode, lhs, rhs, opts)
 end
 
 -- open file tree
-map("n", "<leader>ft", "<cmd>NeoTreeShowToggle<CR>")
+map("n", "<leader>ft", "<cmd>Lex<CR>")
 
 -- navigation
 map("n", "C-h", "C-wh")

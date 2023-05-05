@@ -45,5 +45,5 @@ g.maplocalleader = ' '
 -- NETRW settings
 g.netrw_winsize = 20
 g.netrw_banner = 0
-g.netrw_liststyle = 0
+g.netrw_liststyle = 3
 g.netrw_keepdir = 0
