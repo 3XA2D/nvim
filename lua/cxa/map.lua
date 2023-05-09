@@ -3,7 +3,7 @@ local function map(mode, lhs, rhs, opts)
 end
 
 -- open file tree
-map("n", "<leader>ft", "<cmd>Lex<CR>")
+map("n", "<leader>ft", vim.cmd.NeoTreeShowToggle)
 
 -- navigation
 map("n", "C-h", "C-wh")

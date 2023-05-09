@@ -5,7 +5,7 @@ return {
     priority = 1000, -- make sure to load this before all the other start plugins
     config = function()
       -- load the colorscheme here
-      vim.cmd([[colorscheme tokyonight-night]])
+      -- vim.cmd([[colorscheme tokyonight-night]])
     end,
   },
   { "nvim-tree/nvim-web-devicons",     lazy = true },
@@ -88,6 +88,14 @@ return {
         tailwind = true,
       },
     },
+  },
+  {
+    'rose-pine/neovim',
+    name = 'rose-pine',
+    config = function()
+      -- load the colorscheme here
+      vim.cmd([[colorscheme rose-pine]])
+    end,
   },
   { 'akinsho/toggleterm.nvim', version = "*", config = true },
   { "tpope/vim-fugitive" },
